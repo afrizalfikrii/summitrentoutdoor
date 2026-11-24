@@ -80,19 +80,21 @@ export default function Catalog() {
                   loading="lazy"
                   className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                <span className="absolute top-2.5 left-2.5 bg-moss text-white px-2 py-0.5 rounded-sm font-manrope text-[10px] font-bold uppercase tracking-wider">
-                  {product.categoryLabel}
-                </span>
-                {product.badge && (
-                  <span
-                    className={`absolute top-2.5 right-2.5 px-2 py-0.5 rounded-sm font-manrope text-[10px] font-bold uppercase tracking-wider ${product.badgeVariant === "highlight"
-                      ? "bg-adventure text-white"
-                      : "bg-surface/95 text-forest-deep border border-sage"
-                      }`}
-                  >
-                    {product.badge}
+                <div className="absolute top-2 left-2 right-2 flex flex-wrap items-start justify-between gap-1 pointer-events-none">
+                  <span className="bg-moss text-white px-1.5 sm:px-2 py-0.5 rounded-sm font-manrope text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
+                    {product.categoryLabel}
                   </span>
-                )}
+                  {product.badge && (
+                    <span
+                      className={`px-1.5 sm:px-2 py-0.5 rounded-sm font-manrope text-[9px] sm:text-[10px] font-bold uppercase tracking-wider ${product.badgeVariant === "highlight"
+                        ? "bg-adventure text-white"
+                        : "bg-surface/95 text-forest-deep border border-sage"
+                        }`}
+                    >
+                      {product.badge}
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Card Body */}

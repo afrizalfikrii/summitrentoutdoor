@@ -166,6 +166,6 @@ export const PRODUCTS: Product[] = [
     pricePerDay: 12000,
     image: "/images/trekking-pole-carbon.jpg",
     imageAlt:
-      "Sepasang trekking pole carbon ultralight di jalur pendakian gunung",
+      "Sepasang treking pole ultralight carbon lock di jalur pendakian gunung",
   },
 ];
