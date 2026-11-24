@@ -37,7 +37,8 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-b border-sage/70 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <>
+      <header className="sticky top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-b border-sage/70 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
       <div className="h-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <a
@@ -111,16 +112,17 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+      </header>
 
-      {/* Mobile Drawer Overlay */}
+      {/* Mobile Drawer Overlay (rendered outside header so backdrop-blur does not trap fixed positioning) */}
       {isDrawerOpen && (
-        <div className="fixed inset-0 z-50 xl:hidden">
+        <div className="fixed inset-0 z-[60] xl:hidden">
           <div
-            className="fixed inset-0 bg-charcoal/50 backdrop-blur-xs"
+            className="fixed inset-0 bg-charcoal/60 backdrop-blur-sm"
             onClick={() => setIsDrawerOpen(false)}
             aria-hidden="true"
           />
-          <aside className="fixed top-0 right-0 bottom-0 w-72 max-w-[85vw] bg-surface border-l border-forest flex flex-col justify-between p-6 shadow-2xl">
+          <aside className="fixed top-0 right-0 bottom-0 h-dvh w-72 max-w-[85vw] bg-surface border-l border-forest flex flex-col justify-between p-6 shadow-2xl overflow-y-auto">
             <div>
               <div className="flex items-center justify-between pb-5 border-b border-sage">
                 <div className="flex items-center gap-2">
@@ -173,6 +175,6 @@ export default function Navbar() {
           </aside>
         </div>
       )}
-    </header>
+    </>
   );
 }
