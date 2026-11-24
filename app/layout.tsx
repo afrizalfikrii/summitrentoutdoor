@@ -31,7 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${oswald.variable} ${manrope.variable}`}>
+    <html
+      lang="id"
+      className={`${oswald.variable} ${manrope.variable} scroll-smooth`}
+    >
       <body className="bg-surface font-manrope text-charcoal antialiased">
         {children}
       </body>
