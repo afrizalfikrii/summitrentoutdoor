@@ -6,8 +6,8 @@ import { createWhatsAppUrl } from "@/data/products";
 
 const BOTTOM_TABS = [
   { label: "Beranda", href: "#beranda", id: "beranda", icon: Home },
-  { label: "Katalog", href: "#katalog", id: "katalog", icon: Package },
   { label: "Keunggulan", href: "#keunggulan", id: "keunggulan", icon: ShieldCheck },
+  { label: "Katalog", href: "#katalog", id: "katalog", icon: Package },
   { label: "Lokasi", href: "#lokasi", id: "lokasi", icon: MapPin },
 ];
 
@@ -44,7 +44,7 @@ export default function MobileBottomBar() {
   return (
     <nav
       aria-label="Navigasi Cepat Mobile"
-      className="lg:hidden fixed bottom-3 left-3 right-3 z-40 bg-surface/95 backdrop-blur-md border border-forest-deep/20 rounded-md shadow-xl px-2 py-1.5"
+      className="lg:hidden fixed bottom-3 left-3 right-3 z-40 bg-surface/95 backdrop-blur-md border border-forest-deep/20 rounded-md shadow-xl px-1.5 py-1.5"
     >
       <div className="grid grid-cols-5 items-center gap-1">
         {BOTTOM_TABS.map((tab) => {
@@ -57,16 +57,16 @@ export default function MobileBottomBar() {
               href={tab.href}
               onClick={() => setActiveHref(tab.href)}
               aria-current={isActive ? "page" : undefined}
-              className={`flex flex-col items-center justify-center py-1.5 rounded transition-all active:scale-95 ${
+              className={`flex flex-col items-center justify-center px-1 py-1.5 rounded transition-all active:scale-95 min-w-0 ${
                 isActive
                   ? "bg-forest-deep text-white shadow-sm"
                   : "text-on-surface-variant hover:text-forest-deep hover:bg-cream"
               }`}
             >
               <Icon
-                className={`w-4 h-4 mb-0.5 ${isActive ? "text-adventure" : ""}`}
+                className={`w-4 h-4 mb-1 shrink-0 ${isActive ? "text-adventure" : ""}`}
               />
-              <span className="font-manrope text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
+              <span className="font-manrope text-[8.5px] sm:text-[10px] font-bold uppercase tracking-normal sm:tracking-wider leading-none truncate max-w-full">
                 {tab.label}
               </span>
             </a>
@@ -79,10 +79,10 @@ export default function MobileBottomBar() {
           )}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center py-1.5 rounded bg-adventure text-white hover:bg-adventure-hover transition-all active:scale-95"
+          className="flex flex-col items-center justify-center px-1 py-1.5 rounded bg-adventure text-white hover:bg-adventure-hover transition-all active:scale-95 min-w-0"
         >
-          <MessageCircle className="w-4 h-4 mb-0.5" />
-          <span className="font-manrope text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
+          <MessageCircle className="w-4 h-4 mb-1 shrink-0" />
+          <span className="font-manrope text-[8.5px] sm:text-[10px] font-bold uppercase tracking-normal sm:tracking-wider leading-none truncate max-w-full">
             Sewa
           </span>
         </a>
